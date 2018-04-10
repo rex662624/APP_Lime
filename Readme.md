@@ -1,0 +1,1 @@
+Build apk for release : flutter build apk 
