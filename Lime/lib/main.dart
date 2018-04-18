@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(new FriendlychatApp());
 }
 
+//theme
+final ThemeData MyTheme = new ThemeData(
+  primarySwatch: Colors.purple,
+  accentColor: Colors.orangeAccent[400],
+);
+//theme
+
 class FriendlychatApp extends StatelessWidget {//APP的主要進入點
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: "Friendlychat",
-      theme: new ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.lightBlue[800],
-        accentColor: Colors.cyan[600],
-      ),
+      title: "Lime",
+        theme:MyTheme,
       home: new ChatScreen(),
     );
   }
@@ -26,7 +30,7 @@ class ChatScreen extends StatefulWidget {                     //modified
 
 // Add the ChatScreenState class definition in main.dart.
 
-class ChatScreenState extends State<ChatScreen> {
+class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin{
   //new
 
 
@@ -36,7 +40,8 @@ class ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text("Lime")
+          title: new Text("Lime"),
+          elevation: 4.0
       ),
 
       body: new Column(
@@ -62,23 +67,35 @@ class ChatScreenState extends State<ChatScreen> {
 
 
 
+
+
 //文字輸入框
   final List<ChatMessage> globalmessages = <ChatMessage>[];//globalmessage代表要顯示的所有訊息
   final TextEditingController _textController = new TextEditingController();
 
+  bool anyword = false;//當使用者打字才會變true
+
   void _handleSubmitted(String text) {
     //submit message要做的事情
-    _textController.clear();//清掉textfield的
+    _textController.clear();//清掉textfield的文字
+    setState(() {
+      anyword = false;//然後把anyword設為false
+    });
+
 
     //並加入messagelist以顯示在螢幕上
     ChatMessage mymessage = new ChatMessage(
       text: text,
+      animationController: new AnimationController(
+        duration: new Duration(milliseconds: 700),    //數字代表速度
+        vsync: this,                      //防止占用資源的工具
+      ),
     );
     setState(() {//在這裡動態顯示message(用setstate告訴famework知道這個部分被改變)
       globalmessages.insert(0,mymessage);
     });
+    mymessage.animationController.forward();
   }
-
   Widget _buildTextComposer() {
     return new IconTheme( //new
       data: new IconThemeData(color: Theme
@@ -91,6 +108,11 @@ class ChatScreenState extends State<ChatScreen> {
             new Flexible(
               child: new TextField(
                 controller: _textController,
+                onChanged: (String text) {
+                  setState(() {
+                    anyword = (text.length > 0); //使用者如果打字了才變成true
+                  });
+                },
                 onSubmitted: _handleSubmitted,
                 decoration: new InputDecoration.collapsed(
                     hintText: "從這裡輸入"),
@@ -100,7 +122,8 @@ class ChatScreenState extends State<ChatScreen> {
               margin: new EdgeInsets.symmetric(horizontal: 4.0),
               child: new IconButton(
                   icon: new Icon(Icons.markunread),
-                  onPressed: () => _handleSubmitted(_textController.text)),
+                  onPressed: anyword ? () => _handleSubmitted(_textController.text): null,//如果使用者在打字才給傳送，不然不做事
+            )
             ),
           ],
         ),
@@ -114,11 +137,21 @@ const String _name = "rex662624";//名字
 
 
 class ChatMessage extends StatelessWidget {//聊天時顯示的訊息格式
-  ChatMessage({this.text});
+  final AnimationController animationController;
+
+  ChatMessage({this.text, this.animationController});
   final String text;
+
+
   @override
   Widget build(BuildContext context) {
-    return new Container(
+    return new SizeTransition(
+
+    sizeFactor: new CurvedAnimation(parent: animationController, curve: Curves.easeOut),
+
+    axisAlignment: 0.0,
+
+    child: new Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),
       child: new Row(
         crossAxisAlignment: CrossAxisAlignment.start,//自動對齊用的
@@ -139,6 +172,8 @@ class ChatMessage extends StatelessWidget {//聊天時顯示的訊息格式
           ),
         ],
       ),
+    )
     );
   }
 }
+
