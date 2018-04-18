@@ -7,8 +7,11 @@ void main() {
 
 //theme
 final ThemeData MyTheme = new ThemeData(
-  primarySwatch: Colors.purple,
-  accentColor: Colors.orangeAccent[400],
+  primarySwatch: Colors.deepOrange,
+  accentColor: Colors.teal,
+  primaryColor:Colors.deepOrange,
+  backgroundColor:Colors.purple,
+  brightness: Brightness.dark,
 );
 //theme
 
@@ -41,7 +44,9 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin{
     return new Scaffold(
       appBar: new AppBar(
           title: new Text("Lime"),
-          elevation: 4.0
+          elevation: 4.0,
+          backgroundColor: Theme.of(context).accentColor,
+
       ),
 
       body: new Column(
@@ -57,7 +62,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin{
           new Divider(height: 5.0),//分隔線
           new Container(//自己目前要打的message
             decoration: new BoxDecoration(
-                color: Theme.of(context).cardColor),
+                color: Theme.of(context).accentColor),
             child: _buildTextComposer(),
           ),
         ],
@@ -122,8 +127,11 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin{
               margin: new EdgeInsets.symmetric(horizontal: 4.0),
               child: new IconButton(
                   icon: new Icon(Icons.markunread),
+                  color:Theme.of(context).primaryColor,
                   onPressed: anyword ? () => _handleSubmitted(_textController.text): null,//如果使用者在打字才給傳送，不然不做事
-            )
+            ),
+                decoration: new BoxDecoration(
+            color: Theme.of(context).backgroundColor),
             ),
           ],
         ),
@@ -176,4 +184,3 @@ class ChatMessage extends StatelessWidget {//聊天時顯示的訊息格式
     );
   }
 }
-
