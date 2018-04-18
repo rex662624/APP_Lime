@@ -20,7 +20,7 @@ class FriendlychatApp extends StatelessWidget {//APP的主要進入點
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: "Lime",
-        theme:MyTheme,
+      theme:MyTheme,
       home: new ChatScreen(),
     );
   }
@@ -43,9 +43,9 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin{
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text("Lime"),
-          elevation: 4.0,
-          backgroundColor: Theme.of(context).accentColor,
+        title: new Text("Lime"),
+        elevation: 4.0,
+        backgroundColor: Theme.of(context).accentColor,
 
       ),
 
@@ -92,7 +92,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin{
     ChatMessage mymessage = new ChatMessage(
       text: text,
       animationController: new AnimationController(
-        duration: new Duration(milliseconds: 700),    //數字代表速度
+        duration: new Duration(milliseconds: 200),    //數字代表速度
         vsync: this,                      //防止占用資源的工具
       ),
     );
@@ -126,12 +126,12 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin{
             new Container(
               margin: new EdgeInsets.symmetric(horizontal: 4.0),
               child: new IconButton(
-                  icon: new Icon(Icons.markunread),
-                  color:Theme.of(context).primaryColor,
-                  onPressed: anyword ? () => _handleSubmitted(_textController.text): null,//如果使用者在打字才給傳送，不然不做事
-            ),
-                decoration: new BoxDecoration(
-            color: Theme.of(context).backgroundColor),
+                icon: new Icon(Icons.markunread),
+                color:Theme.of(context).primaryColor,
+                onPressed: anyword ? () => _handleSubmitted(_textController.text): null,//如果使用者在打字才給傳送，不然不做事
+              ),
+              decoration: new BoxDecoration(
+                  color: Theme.of(context).backgroundColor),
             ),
           ],
         ),
@@ -155,32 +155,32 @@ class ChatMessage extends StatelessWidget {//聊天時顯示的訊息格式
   Widget build(BuildContext context) {
     return new SizeTransition(
 
-    sizeFactor: new CurvedAnimation(parent: animationController, curve: Curves.easeOut),
+        sizeFactor: new CurvedAnimation(parent: animationController, curve: Curves.easeOut),
 
-    axisAlignment: 0.0,
+        axisAlignment: 0.0,
 
-    child: new Container(
-      margin: const EdgeInsets.symmetric(vertical: 10.0),
-      child: new Row(
-        crossAxisAlignment: CrossAxisAlignment.start,//自動對齊用的
-        children: <Widget>[
-          new Container(
-            margin: const EdgeInsets.only(right: 16.0),
-            child: new CircleAvatar(child: new Text(_name[0])),//圓形的大頭貼(會顯示name的第一個字元 所以用name[0])
-          ),
-          new Column(//包起來的部分合成一個container
-            crossAxisAlignment: CrossAxisAlignment.start,
+        child: new Container(
+          margin: const EdgeInsets.symmetric(vertical: 1.0),
+          child: new Row(
+            crossAxisAlignment: CrossAxisAlignment.start,//自動對齊用的
             children: <Widget>[
-              new Text(_name, style: Theme.of(context).textTheme.subhead),
               new Container(
-                margin: const EdgeInsets.only(top: 5.0),
-                child: new Text(text),
+                margin: const EdgeInsets.only(right: 16.0),
+                child: new CircleAvatar(child: new Text(_name[0])),//圓形的大頭貼(會顯示name的第一個字元 所以用name[0])
+              ),
+              new Column(//包起來的部分合成一個container
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  new Text(_name, style: Theme.of(context).textTheme.subhead),
+                  new Container(
+                    margin: const EdgeInsets.only(top: 5.0),
+                    child: new Text(text),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
-    )
+        )
     );
   }
 }
