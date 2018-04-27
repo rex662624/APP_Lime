@@ -9,39 +9,39 @@ class ChatModel {
 
 List<ChatModel> dummyData = [
   new ChatModel(
-      name: "Pawan Kumar",
-      message: "Hey Flutter, You are so amazing !",
-      time: "15:30",
+      name: "Amy",
+      message: "哈哈 我先洗澡!",
+      time: "8:30",
       avatarUrl:
-          "https://i.imgur.com/dlbNZ2t.png"),
+          "./assets/1.png"),
   new ChatModel(
-      name: "Harvey Spectre",
-      message: "Hey I have hacked whatsapp!",
+      name: "Hen",
+      message: "咕咕咕 起床",
+      time: "7:30",
+      avatarUrl:
+          "/assets/2.png"),
+  new ChatModel(
+      name: "BatMan",
+      message: " I'm bad man! Oops, batman",
+      time: "17:00",
+      avatarUrl:
+          "/assets/3.jpg"),
+  new ChatModel(
+      name: "Ken",
+      message: "出乃玩",
+      time: "4:30",
+      avatarUrl:
+          "/assets/4.png"),
+  new ChatModel(
+      name: "不要回他!!",
+      message: "欠錢不還喔 出來啊",
       time: "17:30",
       avatarUrl:
-          "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb"),
+          "/assets/5.png"),
   new ChatModel(
-      name: "Mike Ross",
-      message: "Wassup !",
-      time: "5:00",
-      avatarUrl:
-          "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb"),
-  new ChatModel(
-      name: "Rachel",
-      message: "I'm good!",
-      time: "10:30",
-      avatarUrl:
-          "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb"),
-  new ChatModel(
-      name: "Barry Allen",
-      message: "I'm the fastest man alive!",
-      time: "12:30",
-      avatarUrl:
-          "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb"),
-  new ChatModel(
-      name: "Joe West",
-      message: "Hey Flutter, You are so cool !",
+      name: "Tommy",
+      message: "你聽過安麗嗎?",
       time: "15:30",
       avatarUrl:
-          "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb"),
+          "/assets/6.png"),
 ];

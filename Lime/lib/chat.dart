@@ -214,7 +214,7 @@ class ReplyMsg extends Msg {
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  new Text(defaultUserName, style: Theme.of(ctx).textTheme.subhead),
+                  new Text(dummyData[index].name, style: Theme.of(ctx).textTheme.subhead),
                   new Container(
                     margin: const EdgeInsets.only(top: 6.0),
                     child: new Text(txt),
@@ -224,7 +224,7 @@ class ReplyMsg extends Msg {
             ),
             new Container(
               margin: const EdgeInsets.only(right: 8.0),
-              child: new CircleAvatar(backgroundImage: new NetworkImage(dummyData[index].avatarUrl)),//new Text(defaultUserName[0])),
+              child: new CircleAvatar(backgroundImage: new AssetImage(dummyData[index].avatarUrl)),//new Text(defaultUserName[0])),
             ),
           ],
         ),
