@@ -9,26 +9,27 @@ class WhatsAppHome extends StatefulWidget {
   _WhatsAppHomeState createState() => new _WhatsAppHomeState();
 }
 
-class _WhatsAppHomeState extends State<WhatsAppHome>
-    with SingleTickerProviderStateMixin {
+class _WhatsAppHomeState extends State<WhatsAppHome> with SingleTickerProviderStateMixin {
+  //TabBarView一定要建的controller 主要是控制tab間的轉換動畫等等，
+  // 也是上面要繼承SingleTickerProviderStateMixin的原因
   TabController _tabController;
 
+
   @override
-  void initState() {
+  void initState() {//初始化controller 還有頁面
     // TODO: implement initState
     super.initState();
     _tabController = new TabController(vsync: this, initialIndex: 1, length: 4);
   }
 
-  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Lime"),
-        elevation: 0.7,
+        elevation: 0.7,//tab的上升下降(浮起程度)
         bottom: new TabBar(
           controller: _tabController,
-          indicatorColor: Colors.white,
+          indicatorColor: Colors.white,//讓你看到現在在哪個tab的那一條線
           tabs: <Widget>[
             new Tab(icon: new Icon(Icons.camera_alt)),
             new Tab(text: "CHATS"),
@@ -41,9 +42,13 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
           ],
         ),
         actions: <Widget>[
-          new Icon(Icons.search),
-          new Padding(
+          new Icon(Icons.add_circle),
+          new Padding(//空格 不然會擠在一起
             padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          ),
+          new Icon(Icons.search),
+          new Padding(//空格
+           padding: const EdgeInsets.symmetric(horizontal: 5.0),
           ),
           new Icon(Icons.more_vert)
         ],
@@ -57,14 +62,14 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
           new CallsScreen(),
         ],
       ),
-      floatingActionButton: new FloatingActionButton(
+      /*floatingActionButton: new FloatingActionButton(
         backgroundColor: Theme.of(context).accentColor,
         child: new Icon(
           Icons.message,
           color: Colors.white,
         ),
         onPressed: () => print("open chats"),
-      ),
+      ),*/
     );
   }
 }

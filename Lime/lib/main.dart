@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: "WhatsApp",
+      title: "Lime",
       theme: new ThemeData(
-        primaryColor: new Color(0xff075E54),
+        primaryColor: Colors.greenAccent[400],
         accentColor: new Color(0xff25D366),
       ),
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,//把debug 右上那個拿掉
       home: new WhatsAppHome(),
     );
   }

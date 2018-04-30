@@ -4,6 +4,7 @@ class ChatModel {
   String time;
   String avatarUrl;
 
+  //constructor
   ChatModel({this.name, this.message, this.time, this.avatarUrl});
 }
 

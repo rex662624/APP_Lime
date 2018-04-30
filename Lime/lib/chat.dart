@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import './pages/chat_screen.dart';
 import './models/chat_model.dart';
-import 'dart:io';
+
 class Chat extends StatefulWidget {
   @override
   State createState() => new ChatWindow();
