@@ -28,6 +28,7 @@ class PlanetRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     //一開始頁面的NEWS圖片
     final planetThumbnail = new Container(
       margin: new EdgeInsets.symmetric(vertical: 16.0),
@@ -68,7 +69,7 @@ class PlanetRow extends StatelessWidget {
     //主題卡
     final planetCard = new Container(
       child: planetCardContent,
-      height: 120.0,
+      height: 135.0,
       margin: new EdgeInsets.only(left: 46.0),
       decoration: new BoxDecoration(
         color: Colors.deepPurple,

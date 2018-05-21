@@ -2,16 +2,13 @@ class Planet {
   final String id;
   final String name;
   final String location;
-  final String distance;
-  final String gravity;
+
   final String description;
   final String image;
   const Planet(
       {this.id,
       this.name,
       this.location,
-      this.distance,
-      this.gravity,
       this.description,
       this.image});
 }
@@ -19,56 +16,46 @@ class Planet {
 List<Planet> planets = [
   const Planet(
     id: "1",
-    name: "News1",
-    location: "內容  1................",
-    distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    name: "News 1 ",
+    location: "對流旺盛大雨特報 6縣市注意",
     description:
-        "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war, and is often referred to as the 'Red Planet' because the reddish iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.",
+       "中央氣象局發布大雨特報。氣象局指出，午後對流雲系發展旺盛，易有短時強降雨，今日花蓮、臺東、屏東地區及宜蘭、台中、高雄山區有局部大雨發生的機率，請注意雷擊及強陣風。此外，氣象局也提醒宜蘭南澳鄉及花蓮秀林鄉有冰雹發生的機率，請注意瞬間大雨、雷擊及強陣風。【中央社／台北21日電】午後對流旺盛，中央氣象局今天下午針對6縣市發布大雨特報，宜蘭縣、花蓮縣、台中市、高雄市、台東縣和屏東縣有局部大雨發生機會，另外，氣象局同時也針對台東發布大雷雨即時訊息，預估將持續到傍晚5時30分。",
     image: "assets/img/news.png",
     //picture: "https://www.nasa.gov/sites/default/files/thumbnails/image/pia21723-16.jpg"
   ),
   const Planet(
     id: "2",
-    name: "News2",
-    location: "內容  2................",
-    distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    name: "News 2 ",
+    location: "72人上班才知被裁 群創：汰弱留強",
     description:
-        "Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth and is slightly more massive than its near-twin Uranus, which is 15 times the mass of Earth and slightly larger than Neptune. Neptune orbits the Sun once every 164.8 years at an average distance of 30.1 astronomical units (4.50×109 km). It is named after the Roman god of the sea and has the astronomical symbol ♆, a stylised version of the god Neptune's trident",
+        "全球四大液晶顯示面板之一的群創光電傳出裁員，有員工投訴，上周五一早被通知資遣，當下立刻打包回家。群創強調此番遵循法規規定資遣72人，是「汰弱留強」，並非裁員。\n根據《蘋果日報》報導，被裁員的員工投訴，上周五一早到公司準備工作時被通知資遣，上司立刻請他們打包走人，回家等領資遣費。群創光電強調這是為了維持員工競爭力，為「年度例行性汰弱留強的精實管理」。群創在全台約有3萬名員工，此次汰弱留強的72人僅占2%，都是經過半年輔導與職務訓練，評估不適任才依循法規申報資遣。群創7日公告第一季財報，合併營收為668億元，稅後純益29.4億元，季減31.5%、年減75.2%，為七季以來的低點。不過群創看好中小尺寸面板將觸底反彈，整機出貨單月可以達到10萬台。",
     image: "assets/img/news.png",
     // picture: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/images/110411main_Voyager2_280_yshires.jpg"
   ),
   const Planet(
     id: "3",
-    name: "News3",
-    location: "內容  3................",
-    distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    name: "News 3 ",
+    location: "胖虎錄MV開嗆「體脂跟EQ一樣低」館長直播反擊",
     description:
-        "The Moon is an astronomical body that orbits planet Earth, being Earth's only permanent natural satellite. It is the fifth-largest natural satellite in the Solar System, and the largest among planetary satellites relative to the size of the planet that it orbits (its primary). Following Jupiter's satellite Io, the Moon is second-densest satellite among those whose densities are known.",
+        "網紅「胖虎」陳睿纁日前自製 MV 開嗆成吉思汗健身俱樂部「館長」陳之漢「體脂肪跟 EQ 一樣低」，館長昨（ 20 ）日隨即開直播反擊，並強調「吃減肥食品就是不對」。\n館長昨（ 20 ）日直播時表示，「吃減肥食品竟是不對，吃減肥食品大錯特錯！要鼓勵人們去運動，而不是去吃這些東西。今天你身為一個網紅，你的能耐在哪裡？」館長指出，想要減肥就必須運動，才能增加自身肌肉量與基礎代謝力，由裡而外健康瘦身，並苦口婆心奉勸大家，不要浪費錢去吃減肥藥。\n館長接著說，運動流的每一滴汗都是證明自己，流的每一滴汗都是辛苦的結晶，要有這些過程才能擁有強壯的身體，才更有自信。「我再次講，別人吃減肥藥干你屁事，對，就是干我屁事，因為這種事情是非常嚴重的誤導全台灣的人，用這種不對的方式說吃減肥藥能減肥是非常荒謬的」。\n館長還砲轟胖虎錄製 MV 的三百壯士健身房「你這樣借他用，你們身為一個健身房竟然讓賣減肥藥的人在那邊拍」，他不禁質問「你們健身房有在賣減肥藥嗎？教練都吃減肥藥的嗎？是都沒有在運動嗎？」\n館長坦言「如果你認為我只是一個開直播整天在那邊嘴人家的人，那代表你對我這個人並不熟」，他強調，大部分都是別人先對他開槍，他才會還擊。他也坦承，自己確實在直播中評論過胖虎的事，但對於胖虎為了自己口袋的錢誆稱減肥藥能減肥，這種行為是非常惡劣又傷天害理的。\n最後，館長在直播中詢問胖虎「你是不是又變胖了？你之前瘦一點，現在是不是又變胖了？」「你那麼想紅，不然我幫你播在我粉專，我看你粉絲那麼少，幫你增加一些粉絲」。此外，他也真心提倡大家，減肥要身體力行，配合健康飲食才是最正確的方式。\n",
     image: "assets/img/news.png",
     //picture: "https://farm5.staticflickr.com/4086/5052125139_43c31b7012.jpg"
   ),
   const Planet(
     id: "4",
-    name: "News4",
-    location: "內容  4................",
-    distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    name: "News 4 ",
+    location: "「拍扁麵包師」赴陸發展不順只剩330元？求國台辦幫忙",
     description:
-        "Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, Earth's only natural satellite. Earth revolves around the Sun in 365.26 days, a period known as an Earth year. During this time, Earth rotates about its axis about 366.26 times.",
+        "高雄市麵包師傅黃士福，2年前因拍攝前總統陳水扁到公園散步的影片一時聲名大噪，不過他的烘焙坊就在之後關店，他也決定前往中國大陸發展。近日微博出現一個疑似為黃士福的帳號「台灣正義麵包師傅」，從發文內容觀察，他的日子似乎不太順遂，甚至向國台辦求助，表示「惠台31政策實際上還沒有落實下來我無法工作，生活費也無法安定下來生活！只希望國台辦給予協助！ 」\n今年4月，「台灣正義麵包師傅」在微博寫道，「自己創業三年，但因受到民進黨迫害，只能結束烘焙坊，離開台灣，到大陸工作」；5月10日發文則為「明天將是我首次去祖國大陸工作開始，有點放心不下家庭太太、小孩子，但生活的現實必須跨越這步，只希望未來在台灣的太太多辛苦。無論將面對什麼挑戰用智慧去克服，台灣對我而言已沒有感情只有親情」。\n不過，從發文內容觀察，這個「正義麵包師傅」在大陸發展似乎不太順利，5月18日，他在臉書感謝媒體採訪報導，「但我只希望回南京市開烘焙教室，教授麵包、蛋糕、手工餅乾技術！惠台31政策實際上還沒有落實下來我無法工作，生活費也無法安定下來生活！只希望國台辦給予協助！ 」，甚至還透露「我只剩330元人民幣」。\n隔天，微博再發文「我目前期待恵台31政策可以讓我貸款一筆款項，先讓我解決住的問題，我在安心工作每個月還款給銀行！希望協助我國台辦！ 」\n見狀，大陸網友紛紛留言加油打氣，表示「機會是打拚出來的。心裡認同一中，很多人道義上會支持，可是生活還是要靠自己努力一步步走」、「腳踏實地闖一番事業。在中國，肯吃苦，餓不死，肯動腦，不會窮」、「網路上的很多都是鍵盤俠。不要管他們說的，做自己不要被這些黑粉左右！」\n",
     image: "assets/img/news.png",
     //picture: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss042e340851_1.jpg"
   ),
   const Planet(
     id: "5",
-    name: "News5",
-    location: "內容  5................",
-    distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    name: "News 5 ",
+    location: "馬總統看手錶 (圖)",
     description:
-        "Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 88 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger to the gods.",
+        "總統馬英九（圖）7日出席廉政座談會，會議結束準備離開時馬總統看了一下手錶。中央社記者謝佳璋攝 101年7月7日",
     image: "assets/img/news.png",
     //picture: "https://c1.staticflickr.com/9/8105/8497927473_2845ae671e_b.jpg"
   ),
